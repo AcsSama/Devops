@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Teachers extends Model
+{
+    protected $table = "tb_teacher";
+    protected $fillable = [
+        'teaid',
+        'teaname',
+        'major',
+        'telephone',
+    ];
+}
