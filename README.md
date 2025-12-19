@@ -1,6 +1,17 @@
 <<<<<<< HEAD
 # Devops
 A laravel project 
+
+## วิธีติดตั้งโปรเจกต์
+
+1. clone โปรเจกต์
+2. รัน `composer install`
+3. ก็อปไฟล์ `.env.example` เป็น `.env`
+4. ตั้งค่า DB ใน `.env`
+5. รัน `php artisan key:generate`
+6. รัน `php artisan migrate --seed` (ถ้ามี)
+7. รัน `php artisan serve`
+
 =======
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
