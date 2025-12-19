@@ -12,6 +12,12 @@
 
             @csrf
             @method('PUT')
+            @if($studentdb->stdimg)
+                <div class="mb-3">
+                    <label class="form-label">รูปเดิม</label><br>
+                    <img src="{{ asset('studentImage/'.$studentdb->stdimg) }}" alt="teacher image" width="120">
+                </div>
+            @endif
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">รหัสนักศึกษา</label>
                 <input type="text" class="form-control" name="stdid" id="stdid" value="{{ $studentdb->stdid}}">

@@ -35,9 +35,22 @@ class StudentdbController extends Controller
             'stdname' => 'required',
             'major' => 'required',
             'telephone' => 'required',
+            'stdimg' => 'required|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
-        Studentdb::create($request->all());
+        $file = $request->file('stdimg');
+        $filename = $request->stdid . '_' . $file->getClientOriginalName();
+        $file->move(public_path('studentImage'), $filename);
+
+        // ถ้าใช้ model
+        Studentdb::create([
+            'stdid' => $request->stdid,
+            'stdname' => $request->stdname,
+            'major' => $request->major,
+            'telephone' => $request->telephone,
+            'stdimg' => $filename,
+        ]);
+
         return redirect()->route('studentdb.index');
     }
 
@@ -67,9 +80,20 @@ class StudentdbController extends Controller
             'stdname' => 'required',
             'major' => 'required',
             'telephone' => 'required',
+            'stdimg' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
-        $studentdb->update($request->all());
+        $data = $request->only(['stdid', 'stdname', 'major', 'telephone']);
+
+        if ($request->hasFile('stdimg')) {
+            $file = $request->file('stdimg');
+            $filename = $request->stdid . '_' . $file->getClientOriginalName();
+            $file->move(public_path('studentImage'), $filename);
+            $data['stdimg'] = $filename;
+        }
+
+        $studentdb->update($data);
+
         return redirect()->route('studentdb.index')->with('success', 'แก้ไขข้อมูลสำเร็จ');
     }
 

@@ -8,9 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <form action="{{ route('studentdb.store') }}" method="POST">
+        <form action="{{ route('studentdb.store') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
+            <div class="mb-3">
+                <label class="form-label">รูปนักศึกษา</label>
+                <input type="file" class="form-control" name="stdimg" id="stdimg">
+            </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">รหัสนักศึกษา</label>
                 <input type="text" class="form-control" name="stdid" id="stdid" placeholder="กรุณากรอกรหัสนักศึกษา">

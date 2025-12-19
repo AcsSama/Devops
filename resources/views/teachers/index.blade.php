@@ -14,7 +14,6 @@
             <th>
                 <a href="{{ route('teachers.create') }}"><button class="btn btn-primary btn-sm">เพิ่ม</button></a>
             </th>
-            <th>teaid</th>
             <th>teaimg</th>
             <th>teaname</th>
             <th>major</th>
@@ -25,7 +24,6 @@
             @foreach ($teachers as $rw)
 
             <tr>
-                <td>{{ $rw->id }}</td>
                 <td>{{ $rw->teaid }}</td>
                 <td><img src="{{ asset('teacherImage/'.$rw->teaimg) }}" style="width: 40px; height: 40px; object-fit: cover;"></td>
                 <td>{{ $rw->teaname }}</td>

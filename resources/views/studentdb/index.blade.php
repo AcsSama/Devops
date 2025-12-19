@@ -14,7 +14,7 @@
                 <th>
                     <a href="{{ route('studentdb.create') }}"><button class="btn btn-primary btn-sm">เพิ่ม</button></a>
                 </th>
-                <th>stdid</th>
+                <th>stdimg</th>
                 <th>stdname</th>
                 <th>major</th>
                 <th>telephone</th>
@@ -25,7 +25,7 @@
 
                 <tr>
                     <td>{{ $rw->id }}</td>
-                    <td>{{ $rw->stdid }}</td>
+                    <td><img src="{{ asset('studentImage/'.$rw->stdimg) }}" style="width: 40px; height: 40px; object-fit: cover;"></td>
                     <td>{{ $rw->stdname }}</td>
                     <td>{{ $rw->major }}</td>
                     <td>{{ $rw->telephone }}</td>

@@ -12,5 +12,6 @@ class Teachers extends Model
         'teaname',
         'major',
         'telephone',
+        'teaimg'
     ];
 }

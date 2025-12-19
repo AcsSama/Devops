@@ -6,6 +6,8 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentdbController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\Api\ApiStudentController;
+use App\Http\Controllers\Api\ApiTeacherController;
 
 Route::get('show/{id}', function($id) {
     return "สวัสดีชาวโลก รหัส:".$id;
@@ -27,3 +29,7 @@ Route::resource('teachers', TeacherController::class);
 
 Route::get('upload', [ImageController::class, 'index']);
 Route::post('upload', [ImageController::class, 'store'])->name('upload.store');
+
+Route::get('/api/student', [ApiStudentController::class,'index']);
+Route::get('/api/teacher', [ApiTeacherController::class,'index']);
+

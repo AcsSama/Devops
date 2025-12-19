@@ -12,5 +12,6 @@ class Studentdb extends Model
         'stdname',
         'major',
         'telephone',
+        'stdimg'
     ];
 }
